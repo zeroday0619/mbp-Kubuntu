@@ -40,7 +40,7 @@ jobs:
           EOF
 
       - name: Release
-        if: github.ref == 'refs/heads/impish'
+        if: github.ref == 'refs/heads/impish-m'
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/*.iso
