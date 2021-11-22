@@ -40,11 +40,11 @@ jobs:
           EOF
 
       - name: Release
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/impish'
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/*.iso
-          tag_name: v21.10-${{ steps.tag.outputs.tag }}-ubiquity
+          tag_name: v21.10-${{ steps.tag.outputs.tag }}
           draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
