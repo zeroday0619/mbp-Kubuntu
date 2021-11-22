@@ -37,7 +37,7 @@ for ALTERNATIVE in t2-big-sur t2-mojave
 do
   echo >&2 "===]> Info: Start building ${ALTERNATIVE}... "
 
-  echo >&2 "===]> Info: Build Ubuntu FS... "
+  echo >&2 "===]> Info: Build Ubuntu IM... "
   /bin/bash -c "
     ROOT_PATH=${ROOT_PATH} \\
     WORKING_PATH=${WORKING_PATH} \\
@@ -47,7 +47,7 @@ do
     ${ROOT_PATH}/01_build_file_system.sh
   "
 
-  echo >&2 "===]> Info: Build Image FS... "
+  echo >&2 "===]> Info: Build Image IM... "
   /bin/bash -c "
     ROOT_PATH=${ROOT_PATH} \\
     WORKING_PATH=${WORKING_PATH} \\

@@ -11,17 +11,17 @@ mount none -t devpts /dev/pts
 export HOME=/root
 export LC_ALL=C
 
-echo "ubuntu-fs-live" >/etc/hostname
+echo "ubuntu-im-live" >/etc/hostname
 
 echo >&2 "===]> Info: Configure and update apt... "
 
 cat <<EOF >/etc/apt/sources.list
-deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
-deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ impish main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ impish main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ impish-security main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ impish-security main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ impish-updates main restricted universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ impish-updates main restricted universe multiverse
 EOF
 apt-get update
 
@@ -177,13 +177,13 @@ apt-get purge -y -qq \
   vim \
   binutils \
   linux-generic \
-  linux-headers-5.4.0-28 \
-  linux-headers-5.4.0-28-generic \
+  linux-headers-5.13.0-19 \
+  linux-headers-5.13.0-19-generic \
   linux-headers-generic \
-  linux-image-5.4.0-28-generic \
+  linux-image-5.13.0-19-generic \
   linux-image-generic \
-  linux-modules-5.4.0-28-generic \
-  linux-modules-extra-5.4.0-28-generic
+  linux-modules-5.13.0-19-generic \
+  linux-modules-extra-5.13.0-19-generic
 
 apt-get autoremove -y
 
