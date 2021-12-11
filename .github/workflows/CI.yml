@@ -33,7 +33,7 @@ jobs:
         run: |
           cat << EOF >/home/instructions.txt
           Download all the artifacts, and put them in a folder
-          without other files. Then run:
+          without other files. Then run:"
           ```
           unzip "*.z??.zip"
           cat livecd-${{ steps.tag.outputs.tag }}-t2-big-sur.z?? > cd.zip
@@ -47,7 +47,7 @@ jobs:
         with:
           #files: ${{ github.workspace }}/*.iso
           files: ${{ github.workspace }}/output/*
-          tag_name: v20.04-${{ steps.tag.outputs.tag }}
+          tag_name: kubuntu-20.04-${{ steps.tag.outputs.tag }}
           body_path: /home/instructions.txt
           draft: false
         env:
