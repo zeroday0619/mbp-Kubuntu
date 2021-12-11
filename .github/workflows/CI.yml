@@ -31,14 +31,16 @@ jobs:
 
       - name: Instructions for putting it back together
         run: |
+          sudo su
           cat << EOF >/home/instructions.txt
-          Download all the artifacts, and put them in a folder
-          without other files. Then run:"
+          Download all the artifacts, and run:"
           ```
-          unzip "*.z??.zip"
+          cd Downloads
           cat livecd-${{ steps.tag.outputs.tag }}-t2-big-sur.z?? > cd.zip
           unzip cd.zip
           ```
+          This will create a `home` folder in Downloads.
+          ISO is there in its subfolders
           EOF
 
       - name: Release

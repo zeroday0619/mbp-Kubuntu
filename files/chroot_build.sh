@@ -11,7 +11,7 @@ mount none -t devpts /dev/pts
 export HOME=/root
 export LC_ALL=C
 
-echo "ubuntu-fs-live" >/etc/hostname
+echo "kubuntu-fs-live" >/etc/hostname
 
 echo >&2 "===]> Info: Configure and update apt... "
 
