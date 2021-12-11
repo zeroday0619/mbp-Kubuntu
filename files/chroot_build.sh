@@ -77,8 +77,9 @@ echo >&2 "===]> Info: Install window manager... "
 
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   plymouth-theme-kubuntu-logo \
+  plymouth-theme-kubuntu-text \
+  plymouth-theme-ubuntu-text \
   kubuntu-desktop \
-  kde-full \
   snapd
 
 echo >&2 "===]> Info: Install Graphical installer... "
@@ -86,8 +87,8 @@ echo >&2 "===]> Info: Install Graphical installer... "
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   ubiquity \
   ubiquity-casper \
-  ubiquity-frontend-gtk \
-  ubiquity-slideshow-ubuntu \
+  ubiquity-frontend-kde \
+  ubiquity-slideshow-kubuntu \
   ubiquity-ubuntu-artwork
 
 echo >&2 "===]> Info: Install useful applications... "
