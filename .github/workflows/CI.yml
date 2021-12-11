@@ -31,12 +31,14 @@ jobs:
 
       - name: Instructions for putting it back together
         run: |
-          cat << EOF
+          cat << EOF >/home/instructions.txt
           Download all the artifacts, and put them in a folder
-          without other files. Then run:"
+          without other files. Then run:
+          ```
           unzip "*.z??.zip"
           cat livecd-${{ steps.tag.outputs.tag }}-t2-big-sur.z?? > cd.zip
-          echo unzip cd.zip
+          unzip cd.zip
+          ```
           EOF
 
       - name: Release
@@ -46,6 +48,7 @@ jobs:
           #files: ${{ github.workspace }}/*.iso
           files: ${{ github.workspace }}/output/*
           tag_name: v20.04-${{ steps.tag.outputs.tag }}
+          body_path: /home/instructions.txt
           draft: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
