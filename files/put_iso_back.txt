@@ -1,0 +1,9 @@
+Download all the artifacts, and run:
+
+``` plain
+cd Downloads
+cat livecd-*-t2-big-sur.z?? > cd.zip
+unzip cd.zip
+```
+This should create a folder named `home` in Downloads
+ISO is there in the subfolders of `home`
