@@ -40,7 +40,7 @@ jobs:
           EOF
 
       - name: Release
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/kubuntu'
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/*.iso
