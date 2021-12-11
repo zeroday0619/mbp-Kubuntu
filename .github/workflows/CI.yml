@@ -43,7 +43,8 @@ jobs:
         if: github.ref == 'refs/heads/kubuntu'
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ github.workspace }}/*.iso
+          #files: ${{ github.workspace }}/*.iso
+          files: ${{ github.workspace }}/output/*
           tag_name: v20.04-${{ steps.tag.outputs.tag }}
           draft: false
         env:
