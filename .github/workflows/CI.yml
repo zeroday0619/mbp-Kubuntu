@@ -22,11 +22,12 @@ jobs:
           VER=$(egrep ^KERNEL_VERSION build.sh|cut -d= -f2)
           echo Version is $VER
           echo "::set-output name=tag::${VER}"
+          sed -i "s/KERNEL_VERSION/${{ steps.tag.outputs.tag }}/g" ${{ github.workspace }}/files/put_iso_back.txt
 
       - name: Upload iso artifact
         uses: actions/upload-artifact@v2
         with:
-          name: mbp-ubuntu-${{ steps.tag.outputs.tag }}.z01
+          name: mbp-ubuntu-${{ steps.tag.outputs.tag }}
           path: ${{ github.workspace }}/output/*
 
       - name: Release
