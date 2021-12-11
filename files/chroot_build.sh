@@ -76,9 +76,9 @@ apt install /tmp/headers-bs.deb /tmp/image-bs.deb
 echo >&2 "===]> Info: Install window manager... "
 
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
-  plymouth-theme-ubuntu-logo \
-  ubuntu-desktop-minimal \
-  ubuntu-gnome-wallpapers \
+  plymouth-theme-kubuntu-logo \
+  kubuntu-desktop \
+  kde-full \
   snapd
 
 echo >&2 "===]> Info: Install Graphical installer... "
