@@ -40,11 +40,11 @@ jobs:
           EOF
 
       - name: Release
-        if: github.ref == 'refs/heads/OTP'
+        if: github.ref == 'refs/heads/OTP-test'
         uses: softprops/action-gh-release@v1
         with:
           files: ${{ github.workspace }}/*.iso
-          tag_name: v20.04-${{ steps.tag.outputs.tag }}
+          tag_name: v20.04-${{ steps.tag.outputs.tag }}-nomodset
           draft: false
           prerelease: true
         env:
