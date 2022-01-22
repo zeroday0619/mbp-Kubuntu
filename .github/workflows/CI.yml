@@ -22,7 +22,8 @@ jobs:
           VER=$(egrep ^KERNEL_VERSION build.sh|cut -d= -f2)
           echo Version is $VER
           echo "::set-output name=tag::${VER}"
-          sed -i "s/KERNEL_VERSION/${VER}/g" ${{ github.workspace }}/.github/workflows/put_iso_back.txt
+          sed -i "s/KERNEL_VERSION/${VER}/g" \
+          ${{ github.workspace }}/.github/workflows/put_iso_back.txt
 
       - name: Upload iso artifact
         uses: actions/upload-artifact@v2
