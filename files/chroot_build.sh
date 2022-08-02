@@ -11,7 +11,7 @@ mount none -t devpts /dev/pts
 export HOME=/root
 export LC_ALL=C
 
-echo "ubuntu-jammy-live" >/etc/hostname
+echo "Kubuntu-jammy-live" >/etc/hostname
 
 echo >&2 "===]> Info: Configure and update apt... "
 
@@ -79,8 +79,8 @@ echo >&2 "===]> Info: Install window manager... "
 
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
   plymouth-theme-ubuntu-logo \
-  ubuntu-desktop-minimal \
-  ubuntu-gnome-wallpapers \
+  kde-plasma-desktop \
+  kubuntu-wallpapers \
   snapd
 
 echo >&2 "===]> Info: Install Graphical installer... "
@@ -147,9 +147,6 @@ echo >&2 "===]> Info: Remove unused applications ... "
 apt-get purge -y -qq \
   transmission-gtk \
   transmission-common \
-  gnome-mahjongg \
-  gnome-mines \
-  gnome-sudoku \
   aisleriot \
   hitori \
   xiterm+thai \
