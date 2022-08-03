@@ -86,7 +86,7 @@ apt install /tmp/headers.deb /tmp/image.deb /tmp/firmware.deb
 echo >&2 "===]> Info: Install window manager... "
 
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
-  plymouth-theme-ubuntu-logo \
+  plymouth-theme-kubuntu-logo \
   kde-plasma-desktop \
   kubuntu-wallpapers \
   snapd
