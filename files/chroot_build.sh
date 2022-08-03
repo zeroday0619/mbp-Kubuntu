@@ -23,6 +23,7 @@ deb-src http://archive.ubuntu.com/ubuntu/ jammy-security main restricted univers
 deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
 EOF
+
 apt-get update
 
 echo >&2 "===]> Info: Install systemd and Ubuntu MBP Repo... "
@@ -44,8 +45,9 @@ ln -s /bin/true /sbin/initctl
 echo >&2 "===]> Info: Install packages needed for Live System... "
 
 export DEBIAN_FRONTEND=noninteractive
+
 apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" \
-  ubuntu-standard \
+  kde-standard \
   sudo \
   casper \
   discover \
@@ -65,10 +67,16 @@ apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="
   intel-microcode \
   thermald \
   grub2 \
-  nautilus-admin
+  nautilus-admin \
+  software-properties-common
+
+# https://community.kde.org/Kubuntu/PPAs
+add-apt-repository ppa:kubuntu-ppa/ppa -y
+add-apt-repository ppa:kubuntu-ppa/backports -y
+apt-get update
+
 
 # This is not ideal, but it should work until the apt repo gets updated.
-
 curl -L https://github.com/t2linux/T2-Ubuntu-Kernel/releases/download/vKVER-PREL/linux-headers-KVER-t2_KVER-PREL_amd64.deb > /tmp/headers.deb
 curl -L https://github.com/t2linux/T2-Ubuntu-Kernel/releases/download/vKVER-PREL/linux-image-KVER-t2_KVER-PREL_amd64.deb > /tmp/image.deb
 curl -L https://cdn.discordapp.com/attachments/706581810745966653/926729551558639646/iso-firmware.deb > /tmp/firmware.deb
@@ -89,7 +97,7 @@ apt-get install -y -qq -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="
   ubiquity \
   ubiquity-casper \
   ubiquity-frontend-gtk \
-  ubiquity-slideshow-ubuntu \
+  ubiquity-slideshow-kubuntu \
   ubiquity-ubuntu-artwork
 
 echo >&2 "===]> Info: Install useful applications... "
